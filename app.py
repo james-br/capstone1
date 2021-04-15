@@ -30,6 +30,11 @@ def home_page():
     a_list = get("https://www.thecocktaildb.com/api/json/v1/1/random.php", "json").json()
     return render_template('home.html', res=a_list)
 
+if __name__ == '__main__':
+    # Threaded option to enable multiple instances for multiple user access support
+    app.run(threaded=True, port=5000)
+
+
 @app.route("/login", methods=["GET", "POST"])
 def login():
     """Produce login form or handle login."""
