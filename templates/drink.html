@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container " style="max-width: 600px;" >
+   <div class="card row d-flex justify-content-between" style="width: 25em;">
+      <img src="{{results.drinks[0].strDrinkThumb}}" class="card-img-top" alt="...">
+      <div class="card-body">
+         <div class="row justify-content-between">
+            <h5 class="card-title">{{results.drinks[0].strDrink}}</h5>
+            <form method="POST" action="/drinks/{{ results.drinks[0].idDrink}}/like"><button class="btn btn-outline-success">Like</button></form>
+         </div>
+        <p class="card-text">{{results.drinks[0].strInstructions}}</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item d-flex justify-content-between">{{results.drinks[0].strIngredient1}}<b>{{results.drinks[0].strMeasure1}}</b></li>
+        <li class="list-group-item d-flex justify-content-between">{{results.drinks[0].strIngredient2}}<b>{{results.drinks[0].strMeasure2}}</b></li>
+        {% if results.drinks[0].strIngredient3 is not none %}
+            <li class="list-group-item d-flex justify-content-between">{{results.drinks[0].strIngredient3}}<b>{{results.drinks[0].strMeasure3}}</b></li>
+            {% else %}
+          {% endif %}
+          {% if results.drinks[0].strIngredient4 is not none %}
+            <li class="list-group-item d-flex justify-content-between">{{results.drinks[0].strIngredient4}}<b>{{results.drinks[0].strMeasure4}}</b></li>
+            {% else %}
+          {% endif %}
+          {% if results.drinks[0].strIngredient5 is not none %}
+            <li class="list-group-item d-flex justify-content-between">{{results.drinks[0].strIngredient5}}<b>{{results.drinks[0].strMeasure5}}</b></li>
+            {% else %}
+          {% endif %}
+          {% if results.drinks[0].strIngredient6 is not none %}
+            <li class="list-group-item d-flex justify-content-between">{{results.drinks[0].strIngredient6}}<b>{{results.drinks[0].strMeasure6}}</b></li>
+            {% else %}
+          {% endif %}
+      </ul>
+  </div>
+</div>
+
+<div class="row justify-content-center" id="drink-fav">
+ 
+</div>
+{% endblock %}

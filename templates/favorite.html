@@ -1,0 +1,48 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+<div class="container">
+    
+    <div class="card-deck">
+      {% for item in drinks %}
+      <div class="card"  style="width: 25em;">
+        <img src="{{item.drinks[0].strDrinkThumb}}" class="card-img-top" alt="...">
+
+        
+        <div class="card-body">
+          <div class="row justify-content-between">
+            <h5 class="card-title">{{item.drinks[0].strDrink}}</h5>
+            <form method="POST" action="/{{user.id}}/{{ item.drinks[0].idDrink}}/delete"><button type="submit" class="btn btn-outline-danger">Delete</button></form>
+          </div>
+          
+          <p class="card-text">{{item.drinks[0].strInstructions}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item d-flex justify-content-between">{{item.drinks[0].strIngredient1}}<b>{{item.drinks[0].strMeasure1}}</b></li>
+          <li class="list-group-item d-flex justify-content-between">{{item.drinks[0].strIngredient2}}<b>{{item.drinks[0].strMeasure2}}</b></li>
+          {% if item.drinks[0].strIngredient3 is not none %}
+            <li class="list-group-item d-flex justify-content-between">{{item.drinks[0].strIngredient3}}<b>{{item.drinks[0].strMeasure3}}</b></li>
+            {% else %}
+          {% endif %}
+          {% if item.drinks[0].strIngredient4 is not none %}
+            <li class="list-group-item d-flex justify-content-between">{{item.drinks[0].strIngredient4}}<b>{{item.drinks[0].strMeasure4}}</b></li>
+            {% else %}
+          {% endif %}
+          {% if item.drinks[0].strIngredient5 is not none %}
+            <li class="list-group-item d-flex justify-content-between">{{item.drinks[0].strIngredient5}}<b>{{item.drinks[0].strMeasure5}}</b></li>
+            {% else %}
+          {% endif %}
+          {% if item.drinks[0].strIngredient6 is not none %}
+            <li class="list-group-item d-flex justify-content-between">{{item.drinks[0].strIngredient6}}<b>{{item.drinks[0].strMeasure6}}</b></li>
+            {% else %}
+          {% endif %}
+        </ul>
+      </div>
+      {% endfor %}
+    </div>
+   
+</div>
+
+
+{% endblock %}

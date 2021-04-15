@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container" style="max-width: 600px;">
+    <h2>Login</h2>
+   <form class="mx-auto" method="POST">
+       {{form.hidden_tag()}}
+       
+       {% for field in form if field.widget.input_type != 'hidden' %}
+
+       <div class="form-group mb-3 input-group-lg">
+            
+            {{field(class="form-control")}}
+
+            {% for field in form.error %}
+            <div class="alert alert-danger">
+                {{ error }}
+            </div>
+       {% endfor %}
+       </div>
+       {% endfor %}
+       <button class="btn btn-primary btn-lg mb-3 btn-block">Login!</button>
+       
+   </form>
+</div>
+
+{% endblock %}

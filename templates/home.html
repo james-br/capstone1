@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container  text-center"  style="max-width: 400px;">
+    <img src="{{res.drinks[0].strDrinkThumb}}"class="card-img-top" alt="...">
+    <div class="row justify-content-center my-2 px-2">
+        <a class="btn btn-primary btn-lg btn-block" href="/register">Sign up</a>
+        <a class="btn btn-lg  btn-outline-success btn-block" href="/login" >Log in</a>
+    </div>
+    
+</div>
+
+{% endblock %}

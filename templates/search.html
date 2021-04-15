@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container" style="max-width: 600px;">
+    <form class="mx-auto" id="form_name" method="POST">
+        {{ form_name.hidden_tag() }} <!--add type=hidden form fields -->
+        {% for field in form_name if field.widget.input_type != 'hidden' %}
+        <div class="form-group mb-3 input-group-lg">
+           
+            {{ field(class="form-control", id="search-name")}}
+            {% for error in field.errors %}
+            {{ error }}
+            {% endfor %}
+        </div>
+        {% endfor %}
+        <button class="btn btn-primary" type="submit">Search</button>
+        <a href="/" class="btn btn-danger">Cancel</a>
+    </form>
+    
+   
+</div>
+<div class="row justify-content-center" id="drink-list">
+ 
+</div>
+
+{% endblock %}
+
+
+

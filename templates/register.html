@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Create User
+{% endblock %}
+
+{% block content %}
+<div class="container" style="max-width: 600px;">
+    <h1>Create your account</h1>
+    <form class="mx-auto" method="POST">
+        {{form.hidden_tag()}}
+        {% for field in form.errors %}
+        <div class="alert alert-danger">{{ field }}:
+            <ul>
+            {% for error in form.errors[field] %}
+            <li>{{ error }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+        {% for field in form if field.widget.input_type != 'hidden' %}
+            <div class="form-group mb-3 input-group-lg">
+                
+                {{field(class="form-control")}}
+            </div>
+        {% endfor %}
+        <button class="btn btn-primary btn-lg btn-block">Sign up!</button>
+        
+    </form>
+</div>
+
+
+{% endblock %}

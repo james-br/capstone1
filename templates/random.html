@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+<div class="card-deck" >
+    
+      <div class="card" style="width: 25em;">
+        <img src="{{a_list.drinks[0].strDrinkThumb}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          {% if user %}
+            <div class="row justify-content-between">
+              <h5 class="card-title">{{a_list.drinks[0].strDrink}}</h5>
+              <form method="POST" action="/drinks/{{ a_list.drinks[0].idDrink}}/like"><button class="btn btn-outline-success">Like</button></form>
+            </div>
+          {% else %}
+            <h5 class="card-title">{{a_list.drinks[0].strDrink}}</h5>
+          {% endif %}
+          <p class="card-text">{{a_list.drinks[0].strInstructions}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item d-flex justify-content-between">{{a_list.drinks[0].strIngredient1}}<b>{{a_list.drinks[0].strMeasure1}}</b></li>
+          <li class="list-group-item d-flex justify-content-between">{{a_list.drinks[0].strIngredient2}}<b>{{a_list.drinks[0].strMeasure2}}</b></li>
+          {% if a_list.drinks[0].strIngredient3 is not none or  not "None" %}
+            <li class="list-group-item d-flex justify-content-between">{{a_list.drinks[0].strIngredient3}}<b>{{a_list.drinks[0].strMeasure3}}</b></li>
+            {% else %}
+          {% endif %}
+          {% if a_list.drinks[0].strIngredient4 is not none or  not "None"  %}
+            <li class="list-group-item d-flex justify-content-between">{{a_list.drinks[0].strIngredient4}}<b>{{a_list.drinks[0].strMeasure4}}</b></li>
+            {% else %}
+          {% endif %}
+          {% if a_list.drinks[0].strIngredient5 is not none or   not "None" %}
+            <li class="list-group-item d-flex justify-content-between">{{a_list.drinks[0].strIngredient5}}<b>{{a_list.drinks[0].strMeasure5}}</b></li>
+            {% else %}
+          {% endif %}
+          {% if a_list.drinks[0].strIngredient6 is not none or  not "None" %}
+            <li class="list-group-item d-flex justify-content-between">{{a_list.drinks[0].strIngredient6}}<b>{{a_list.drinks[0].strMeasure6}}</b></li>
+            {% else %}
+          {% endif %}   
+        </ul>
+        
+    </div>
+    
+
+    
+    <div class="card" style="width: 25em;">
+        <img src="{{b_list.drinks[0].strDrinkThumb}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          {% if user %}
+            <div class="row justify-content-between">
+              <h5 class="card-title">{{b_list.drinks[0].strDrink}}</h5>
+              <form method="POST" action="/drinks/{{ b_list.drinks[0].idDrink}}/like"><button class="btn btn-outline-success">Like</button></form>
+            </div>
+          {% else %}
+            <h5 class="card-title">{{b_list.drinks[0].strDrink}}</h5>
+          {% endif %}
+          
+          <p class="card-text">{{b_list.drinks[0].strInstructions}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item d-flex justify-content-between">{{b_list.drinks[0].strIngredient1}}<b>{{b_list.drinks[0].strMeasure1}}</b></li>
+          <li class="list-group-item d-flex justify-content-between">{{b_list.drinks[0].strIngredient2}}<b>{{b_list.drinks[0].strMeasure2}}</b></li>
+          {% if b_list.drinks[0].strIngredient3 is not none or  not "None" %}
+            <li class="list-group-item d-flex justify-content-between">{{b_list.drinks[0].strIngredient3}}<b>{{b_list.drinks[0].strMeasure3}}</b></li>
+            {% else %}
+          {% endif %}
+          {% if b_list.drinks[0].strIngredient4 is not none or  not "None"  %}
+            <li class="list-group-item d-flex justify-content-between">{{b_list.drinks[0].strIngredient4}}<b>{{b_list.drinks[0].strMeasure4}}</b></li>
+            {% else %}
+          {% endif %}
+          {% if b_list.drinks[0].strIngredient5 is not none or   not "None" %}
+            <li class="list-group-item d-flex justify-content-between">{{b_list.drinks[0].strIngredient5}}<b>{{b_list.drinks[0].strMeasure5}}</b></li>
+            {% else %}
+          {% endif %}
+          {% if b_list.drinks[0].strIngredient6 is not none or  not "None" %}
+            <li class="list-group-item d-flex justify-content-between">{{b_list.drinks[0].strIngredient6}}<b>{{b_list.drinks[0].strMeasure6}}</b></li>
+            {% else %}
+          {% endif %} 
+        </ul>
+        
+    </div>
+  
+
+    
+    <div class="card" style="width: 25em;">
+        <img src="{{c_list.drinks[0].strDrinkThumb}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          {% if user %}
+            <div class="row justify-content-between">
+              <h5 class="card-title">{{c_list.drinks[0].strDrink}}</h5>
+              <form method="POST" action="/drinks/{{ c_list.drinks[0].idDrink}}/like"><button class="btn btn-outline-success">Like</button></form>
+            </div>
+          {% else %}
+            <h5 class="card-title">{{c_list.drinks[0].strDrink}}</h5>
+          {% endif %}
+          <p class="card-text">{{c_list.drinks[0].strInstructions}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item d-flex justify-content-between">{{c_list.drinks[0].strIngredient1}}<b>{{c_list.drinks[0].strMeasure1}}</b></li>
+          <li class="list-group-item d-flex justify-content-between">{{c_list.drinks[0].strIngredient2}}<b>{{c_list.drinks[0].strMeasure2}}</b></li>
+          {% if c_list.drinks[0].strIngredient3 is not none or  not "None" %}
+            <li class="list-group-item d-flex justify-content-between">{{c_list.drinks[0].strIngredient3}}<b>{{c_list.drinks[0].strMeasure3}}</b></li>
+            {% else %}
+          {% endif %}
+          {% if c_list.drinks[0].strIngredient4 is not none or  not "None"  %}
+            <li class="list-group-item d-flex justify-content-between">{{c_list.drinks[0].strIngredient4}}<b>{{c_list.drinks[0].strMeasure4}}</b></li>
+            {% else %}
+          {% endif %}
+          {% if c_list.drinks[0].strIngredient5 is not none or   not "None" %}
+            <li class="list-group-item d-flex justify-content-between">{{c_list.drinks[0].strIngredient5}}<b>{{c_list.drinks[0].strMeasure5}}</b></li>
+            {% else %}
+          {% endif %}
+          {% if c_list.drinks[0].strIngredient6 is not none or  not "None" %}
+            <li class="list-group-item d-flex justify-content-between">{{c_list.drinks[0].strIngredient6}}<b>{{c_list.drinks[0].strMeasure6}}</b></li>
+            {% else %}
+          {% endif %} 
+        </ul>
+        
+    </div>
+    
+
+
+</div>
+</div>
+{% endblock %}
