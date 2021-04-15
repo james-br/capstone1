@@ -15,7 +15,7 @@ class User(db.Model):
     """User Table"""
     __tablename__ = "user"
     
-    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True, unique=True)
     username = db.Column(db.String(50), nullable=False, unique=True)
     password = db.Column(db.Text, nullable=False)
     email = db.Column(db.String(30), nullable=False)
